@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somonauk Pancake House &mdash; Somonauk, IL</title>
+  <meta name="description" content="Somonauk Pancake House: breakfast and brunch all day. 740 E Market St, Somonauk, IL. Call (815) 498-1000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff8e3;
+      --paper: #ffffff;
+      --surface: #fbeec1;
+      --line: #f3dd91;
+      --ink: #3a2410;
+      --ink-soft: #6b4823;
+      --ink-dim: #a5825b;
+      --maple: #d97a2e;
+      --maple-deep: #ab5b1a;
+      --butter: #f6c84e;
+      --butter-deep: #d89e1f;
+      --coffee: #4a2d18;
+      --shadow: 0 8px 24px rgba(58, 36, 16, 0.10);
+      --shadow-lift: 0 16px 40px rgba(58, 36, 16, 0.18);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Caprasimo', serif; font-weight: 400; line-height: 1.05; letter-spacing: -0.005em; }
+
+    header { position: sticky; top: 0; z-index: 100; background: rgba(255, 248, 227, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { font-family: 'Caprasimo', serif; font-size: 1.6rem; color: var(--ink); }
+    .logo .accent { color: var(--maple); }
+    .nav-call { padding: 0.7rem 1.4rem; border-radius: 999px; background: var(--maple); color: var(--paper); text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 14px rgba(217, 122, 46, 0.3); transition: transform 0.15s, background 0.15s; }
+    .nav-call:hover { background: var(--maple-deep); transform: translateY(-1px); }
+
+    .hero { padding: 5rem 1.5rem 6rem; background: radial-gradient(ellipse 70% 50% at 80% 30%, rgba(246, 200, 78, 0.35), transparent 70%), radial-gradient(ellipse 40% 30% at 15% 70%, rgba(217, 122, 46, 0.15), transparent 60%), var(--bg); }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1.1rem; background: rgba(217, 122, 46, 0.15); color: var(--maple-deep); border: 1.5px solid rgba(217, 122, 46, 0.35); border-radius: 999px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(3.2rem, 6.5vw, 5.6rem); margin-bottom: 1.3rem; }
+    .hero h1 .accent { color: var(--maple); }
+    .hero-tagline { font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 2.5rem; max-width: 32rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .btn-primary { display: inline-flex; align-items: center; padding: 1.2rem 2.4rem; border-radius: 999px; background: var(--maple); color: var(--paper); text-decoration: none; font-weight: 800; font-size: 1.1rem; box-shadow: 0 8px 24px rgba(217, 122, 46, 0.35); transition: transform 0.15s, background 0.15s; animation: pulse-maple 2.5s ease-in-out infinite; }
+    @keyframes pulse-maple { 0%,100% { box-shadow: 0 8px 24px rgba(217, 122, 46, 0.32); } 50% { box-shadow: 0 8px 36px rgba(217, 122, 46, 0.55); } }
+    .btn-primary:hover { background: var(--maple-deep); transform: translateY(-3px); animation: none; }
+    .btn-outline { display: inline-flex; align-items: center; padding: 1.1rem 2rem; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.15s, color 0.15s; }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); }
+    .hero-meta { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.8rem; border-top: 1.5px solid var(--line); color: var(--ink-soft); font-size: 0.95rem; }
+    .hero-meta-item strong { color: var(--ink); font-weight: 700; }
+    .hero-photo { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lift); aspect-ratio: 4/5; border: 6px solid var(--paper); transform: rotate(2deg); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    section { padding: 5rem 1.5rem; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 3.5rem; }
+    .section-head .eyebrow { display: inline-block; color: var(--maple-deep); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .section-head h2 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); }
+    .section-head h2 .accent { color: var(--maple); }
+
+    .about { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+    .about p { color: var(--ink-soft); margin-bottom: 1.1rem; font-size: 1.05rem; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .stat { background: var(--paper); border: 1px solid var(--line); padding: 1.5rem 1.2rem; border-radius: 16px; text-align: center; }
+    .stat-num { font-family: 'Caprasimo', serif; font-size: 2.8rem; color: var(--maple); line-height: 1; margin-bottom: 0.3rem; }
+    .stat-label { font-size: 0.78rem; color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .menu-card { background: var(--paper); padding: 2rem; border-radius: 18px; border: 1px solid var(--line); transition: transform 0.2s, border-color 0.2s; }
+    .menu-card:hover { transform: translateY(-4px); border-color: var(--maple); }
+    .menu-card .icon { font-size: 2.2rem; margin-bottom: 0.6rem; }
+    .menu-card h3 { font-size: 1.65rem; margin-bottom: 0.4rem; }
+    .menu-card .price { color: var(--maple-deep); font-weight: 800; font-size: 1.4rem; margin-bottom: 0.7rem; font-family: 'Caprasimo', serif; }
+    .menu-card .desc { color: var(--ink-soft); font-size: 0.97rem; line-height: 1.55; }
+    .price-note { text-align: center; color: var(--ink-dim); font-size: 0.85rem; margin-top: 2rem; font-style: italic; }
+
+    .hours { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .hours-grid { max-width: 600px; margin: 0 auto; display: grid; gap: 0.5rem; }
+    .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 1.5rem; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+    .hours-row .day { font-family: 'Caprasimo', serif; font-size: 1.2rem; }
+    .hours-row .time { color: var(--ink-soft); font-weight: 600; }
+
+    .map-wrap { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+
+    .cta-band { background: linear-gradient(135deg, var(--maple-deep) 0%, var(--maple) 60%, var(--butter) 100%); color: var(--paper); text-align: center; padding: 5rem 1.5rem; }
+    .cta-band h2 { font-size: clamp(2.4rem, 4.5vw, 3.6rem); margin-bottom: 1rem; color: var(--paper); }
+    .cta-band h2 .accent { color: #fff; }
+    .cta-band p { color: rgba(255,255,255,0.92); margin-bottom: 2.5rem; font-size: 1.1rem; }
+    .cta-band .btn-primary { background: var(--paper); color: var(--maple-deep); animation: none; }
+    .cta-band .btn-primary:hover { background: #fff5d3; transform: translateY(-3px); }
+
+    footer { background: var(--coffee); color: rgba(255, 248, 227, 0.75); padding: 3rem 1.5rem 2.5rem; text-align: center; }
+    footer .footer-logo { font-family: 'Caprasimo', serif; font-size: 1.5rem; color: var(--paper); margin-bottom: 1rem; }
+    footer .footer-logo .accent { color: var(--butter); }
+    footer .footer-links { margin-bottom: 1.5rem; }
+    footer a { color: rgba(255,248,227,0.88); text-decoration: none; margin: 0 0.7rem; font-size: 0.95rem; transition: color 0.15s; }
+    footer a:hover { color: var(--butter); }
+    footer .copyright { font-size: 0.83rem; color: rgba(255,248,227,0.55); }
+
+    @media (max-width: 800px) {
+      .hero { padding: 3rem 1.5rem 4rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-photo { aspect-ratio: 4/3; transform: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-call { padding: 0.55rem 1rem; font-size: 0.85rem; }
+      section { padding: 3.5rem 1.5rem; }
+      body { padding-bottom: 5.5rem; }
+    }
+    .sticky-cta { display: none; }
+    @media (max-width: 800px) {
+      .sticky-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255, 248, 227, 0.97); backdrop-filter: blur(10px); border-top: 1px solid var(--line); padding: 0.8rem 1rem; z-index: 99; }
+      .sticky-cta .btn-primary { width: 100%; justify-content: center; animation: none; padding: 1rem; font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">Somonauk <span class="accent">Pancake House</span></div>
+      <a class="nav-call" href="tel:8154981000">Call</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow">&#127859; Breakfast all day, baby</span>
+        <h1>Pancakes the way <span class="accent">grandma flipped &lsquo;em.</span></h1>
+        <p class="hero-tagline">Stacks tall enough to make you slow down. Eggs cooked to order. Coffee that keeps refilling. Open 6 AM Monday through Saturday, 6 AM Sunday too &mdash; we're the morning spot in Somonauk.</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="tel:8154981000">Call (815) 498-1000</a>
+          <a class="btn-outline" href="#menu">See the Menu</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><strong>740 E Market St</strong> &middot; Somonauk, IL 60552</div>
+          <div class="hero-meta-item">Open <strong>7 Days</strong> &middot; from 6 AM</div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <!-- REPLACE WITH REAL PHOTO -->
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=900&q=80" alt="Stack of pancakes with butter and syrup" />
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="section-head" style="text-align:left; margin-bottom:1.5rem;">
+            <span class="eyebrow">The pancake house way</span>
+            <h2 style="font-size:clamp(2rem, 4vw, 3rem);">Start your day <span class="accent">stacked.</span></h2>
+          </div>
+          <p>We've been flipping pancakes in Somonauk longer than most folks remember. The pancakes are tall, the bacon is crispy, the coffee is honest. We do classic eggs every way, French toast, omelettes, and lunch starting around 11.</p>
+          <p>Dine-in, takeout, or curbside pickup. We've got room for the whole family on a Sunday morning.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat"><div class="stat-num">6AM</div><div class="stat-label">Daily Open</div></div>
+          <div class="stat"><div class="stat-num">7</div><div class="stat-label">Days a Week</div></div>
+          <div class="stat"><div class="stat-num">8PM</div><div class="stat-label">Mon&ndash;Sat Close</div></div>
+          <div class="stat"><div class="stat-num">&#127859;</div><div class="stat-label">All Day Breakfast</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The plate</span>
+        <h2>Pancakes &amp; <span class="accent">friends</span></h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="icon">&#127859;</div>
+          <h3>The Classic Stack</h3>
+          <div class="price">$8 &#10033;</div>
+          <div class="desc">Three buttermilk pancakes, butter, real maple syrup. The original.</div>
+        </div>
+        <div class="menu-card">
+          <div class="icon">&#127827;</div>
+          <h3>Berry Stack</h3>
+          <div class="price">$10 &#10033;</div>
+          <div class="desc">Three pancakes loaded with fresh blueberries or strawberries.</div>
+        </div>
+        <div class="menu-card">
+          <div class="icon">&#127857;</div>
+          <h3>French Toast</h3>
+          <div class="price">$9 &#10033;</div>
+          <div class="desc">Thick-cut, dipped in vanilla cinnamon batter, dusted with powdered sugar.</div>
+        </div>
+        <div class="menu-card">
+          <div class="icon">&#129368;</div>
+          <h3>Western Omelette</h3>
+          <div class="price">$11 &#10033;</div>
+          <div class="desc">Ham, peppers, onions, cheese. Hash browns and toast on the side.</div>
+        </div>
+        <div class="menu-card">
+          <div class="icon">&#127828;</div>
+          <h3>Pancake Lunch Combo</h3>
+          <div class="price">$12 &#10033;</div>
+          <div class="desc">Two pancakes + a burger or sandwich. Best of both worlds.</div>
+        </div>
+        <div class="menu-card">
+          <div class="icon">&#9749;</div>
+          <h3>Coffee &amp; OJ</h3>
+          <div class="price">$3 &#10033;</div>
+          <div class="desc">Bottomless coffee or a tall fresh orange juice. Refills on us.</div>
+        </div>
+      </div>
+      <p class="price-note">&#10033; Prices shown are placeholders &mdash; confirm with the Pancake House before launch.</p>
+    </div>
+  </section>
+
+  <section class="hours">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Hours</span>
+        <h2>Open every <span class="accent">single day.</span></h2>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-row"><span class="day">Monday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Tuesday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Wednesday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Thursday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Saturday</span><span class="time">6:00 AM &ndash; 8:00 PM</span></div>
+        <div class="hours-row"><span class="day">Sunday</span><span class="time">6:00 AM &ndash; 3:00 PM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Find us</span>
+        <h2>740 E Market St, <span class="accent">Somonauk</span></h2>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=740+E+Market+St+Somonauk+IL+60552&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>See you <span class="accent">at breakfast?</span></h2>
+    <p>Call ahead for big tables, takeout, or curbside.</p>
+    <a class="btn-primary" href="tel:8154981000">Call (815) 498-1000</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Somonauk <span class="accent">Pancake House</span></div>
+    <div class="footer-links">
+      <a href="tel:8154981000">Call</a> &middot;
+      <a href="https://maps.apple.com/?q=740+E+Market+St+Somonauk+IL+60552">Directions</a> &middot;
+      <a href="https://www.facebook.com/p/Somonauk-Pancake-House-100063578923844/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="copyright">&copy; 2026 Somonauk Pancake House &middot; 740 E Market St, Somonauk, IL 60552</div>
+  </footer>
+
+  <div class="sticky-cta"><a class="btn-primary" href="tel:8154981000">Call Now</a></div>
+</body>
+</html>
