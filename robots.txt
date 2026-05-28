@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://somonauk-pancake-house.vercel.app/sitemap.xml
